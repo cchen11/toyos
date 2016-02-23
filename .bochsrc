@@ -1,0 +1,39 @@
+# You many now use double quotes around pathnames, in case
+# your pathname includes spaces.
+
+romimage: file=/usr/share/bochs/BIOS-bochs-latest
+vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+
+# size of memory
+megs: 128
+
+# floppy image
+floppya: 1_44=boot.img, status=inserted
+# just a partition image, formatted by mkfs.minix, 1mb
+# ata0-master: type=disk, path="bin/rootfs.img", mode=flat, cylinders=2, heads=16, spt=63
+
+#boot: a
+boot: floppy
+
+log: .bochsout
+panic: action=ask
+error: action=report
+info: action=report
+debug: action=ignore
+
+# gdbstub: enabled=1, port=1234, text_base=0, data_base=0, bss_base=0
+display_library: x
+
+# vga_update_interval: 300000
+# keyboard_serial_delay: 250
+#keyboard_paste_delay: 100000
+mouse: enabled=0
+private_colormap: enabled=0
+fullscreen: enabled=0
+screenmode: name="sample"
+#keyboard_mapping: enabled=0, map=
+#keyboard_type: at
+
+#debug_symbols: file=main.sym
+
+#keyboard_type: at
